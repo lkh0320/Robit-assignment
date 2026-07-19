@@ -1,0 +1,135 @@
+=========================
+Git 자주 사용하는 명령어
+=========================
+
+[초기 설정]
+git config --global user.name "이름"
+git config --global user.email "이메일"
+
+현재 설정 확인
+git config --list
+
+----------------------------------------
+
+[저장소 생성 및 복제]
+현재 폴더를 Git 저장소로 생성
+git init
+
+원격 저장소 복제
+git clone <저장소 URL>
+
+----------------------------------------
+
+[상태 확인]
+변경 사항 확인
+git status
+
+커밋 내역 확인
+git log
+
+한 줄로 로그 보기
+git log --oneline
+
+----------------------------------------
+
+[파일 추가 및 커밋]
+파일 추가
+git add 파일명
+
+모든 변경 사항 추가
+git add .
+
+커밋
+git commit -m "커밋 메시지"
+
+추가와 커밋 동시에(추적 중인 파일만)
+git commit -am "커밋 메시지"
+
+----------------------------------------
+
+[브랜치]
+브랜치 목록
+git branch
+
+브랜치 생성
+git branch 브랜치명
+
+브랜치 생성 후 이동
+git checkout -b 브랜치명
+
+브랜치 이동
+git checkout 브랜치명
+
+(최신 방식)
+git switch 브랜치명
+
+브랜치 삭제
+git branch -d 브랜치명
+
+----------------------------------------
+
+[병합]
+현재 브랜치에 병합
+git merge 브랜치명
+
+----------------------------------------
+
+[원격 저장소]
+원격 저장소 확인
+git remote -v
+
+원격 저장소 추가
+git remote add origin <URL>
+
+원격 저장소에 업로드
+git push origin 브랜치명
+
+최초 업로드
+git push -u origin main
+
+원격 저장소 내용 가져오기
+git fetch
+
+가져오면서 병합
+git pull origin main
+
+----------------------------------------
+
+[변경 취소]
+파일 변경 취소
+git restore 파일명
+
+스테이징 취소
+git restore --staged 파일명
+
+마지막 커밋 수정
+git commit --amend
+
+----------------------------------------
+
+[기타]
+파일 차이 확인
+git diff
+
+태그 목록
+git tag
+
+특정 버전으로 이동
+git checkout 태그명
+
+----------------------------------------
+
+[자주 사용하는 작업 순서]
+
+1. git status
+2. git add .
+3. git commit -m "작업 내용"
+4. git push origin main
+
+새 기능 개발 시
+
+1. git checkout -b feature/login
+2. 작업
+3. git add .
+4. git commit -m "로그인 기능 추가"
+5. git push origin feature/login
